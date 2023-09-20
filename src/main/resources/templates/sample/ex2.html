@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en " xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${test}"></p>
+<ul>
+    <li th:each="dto : ${list}">
+    [[${dto}]]
+    </li>
+</ul>
+<table border="1">
+<tr th:each="dto : ${list}">
+    <td th:text="${dto.sno}" >번호
+</br>    </td>
+
+    <td>[[${dto.first}]]</td>
+    <td>[[${dto.last}]]</td>
+
+</tr>
+</table>
+
+
+</body>
+</html>
