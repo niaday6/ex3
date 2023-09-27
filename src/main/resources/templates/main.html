@@ -7,19 +7,37 @@
 <body>
 <h2>main page</h2>
 <div class="fruits">
-    <p>Apple</p>
-    <p>Banana</p>
-    <p>Orange</p>
+    <p> Apple </p>
+    <p> Banana </p>
+    <p> Orange </p>
 </div>
-<script>
-    const fruits = document.querySelectorAll(".fruits p");
-    const fruitArray = Array.from(fruits);
-    console.log(fruitArray);
+<div id = "box">
+    <style>#source {color: blue}</style>
+    <p>Hi there!</p>
+    <span style="display:none">hidden message</span>
+</div>
 
-    const fruitNames = fruitArray.map(fruit => fruit.textContent);
-    console.log(fruitNames);
+<script>
+    let box = document.querySelector("#box");
+    // console.log(box.innerHTML);
+    // console.log(box.textContent);
+    console.log(box.innerText);
+
+    const fruits = document.querySelectorAll(".fruits p");
+    const fruitArray = Array.from(fruits,fruit =>{
+        console.log(fruit);
+        return fruit.textContent;
+    });
+    //const fruitArray = Array.from(fruits);
+    // console.log(fruitArray);
+
+
+   // const fruitNames = fruitArray.map(fruit => fruit.textContent);
+   // console.log(fruitNames);
 
 
 </script>
+
+
 </body>
 </html>

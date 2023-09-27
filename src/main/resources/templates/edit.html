@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>top page</title>
+    <title>edit page</title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=UTF-8" />
     <style>
@@ -12,14 +12,11 @@
         td { padding:5px; color:black; background:#e0e0ff; }
     </style>
 </head>
-
-<th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
-
-    <th:block th:fragment="content">
-        <body>
-        <h1 th:text="#{content.title}">Helo page</h1>
+<body>
+<h1 th:text="${title}">Edit page</h1>
 <table>
-    <form method="post" action="/" th:object="${formModel}">
+    <form method="post" action="/edit" th:object="${formModel}">
+        <input type="hidden" name="id" th:value="*{id}" />
         <tr><td><label for="name">이름</label></td>
             <td><input type="text" name="name" th:value="*{name}" /></td></tr>
         <tr><td><label for="age">연령</label></td>
@@ -32,20 +29,5 @@
         <tr><td></td><td><input type="submit" /></td></tr>
     </form>
 </table>
-<hr/>
-<table>
-    <tr><th>ID</th><th>수정1</th><th>수정2</th>><th>이름</th><th>삭제</th></tr>
-    <tr th:each="obj : ${datalist}">
-        <td th:text="${obj.id}"></td>
-        <td><a th:href="@{/edit/{id}(id=${obj.id})}" >이동</a></td>
-        <td><a th:href="@{/edit(id=${obj.id})}">[[${obj.id}]]</a></td>
-        <td th:text="${obj.name}"></td>
-        <td><a th:href="@{/delete/{id}(id=${obj.id})}" >x</a></td>
-    </tr>
-</table>
 </body>
-    </th:block>
-
-</th:block>
-
 </html>

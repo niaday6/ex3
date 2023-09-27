@@ -25,7 +25,9 @@ public class SampleController {
 log.info("ex1=====================================");
 }
 
-@GetMapping({"/ex2","/ex22","/ex223","/ex224","/ex225","ex226","/ex228","/ex229","/exLink"})
+@GetMapping({"/ex2","/ex22","/ex223","/ex224"
+        ,"/ex225","ex226","/ex228","/ex229","/exLink"
+        ,"/exDate","/exDate2"})
     public void exModel(Model model){
     List<SampleDTO> list2 = new ArrayList<>();//속도는 아래 코드보다 빠름
     for (int i = 1; i < 20; i++) {
@@ -69,6 +71,13 @@ log.info("ex1=====================================");
     public void ex3(){
     log.info("ex3");
 }
+
+@GetMapping({"/exLayout1","/exSidebar","/exLayout2","/exTemplate"})
+    public void exLayout1(){
+    log.info("exLayout.............");
+}
+
+
 
 
 }

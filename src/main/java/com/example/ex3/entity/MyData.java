@@ -1,5 +1,11 @@
 package com.example.ex3.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="mydata")
 public class MyData {
 
@@ -27,6 +37,8 @@ public class MyData {
 
     @Column(nullable = true)
     private String memo;
+
+
 
     public long getId() {
         return id;
